@@ -1,0 +1,17 @@
+{
+  "title": "Tostada Regia",
+  "welcome": "Welcome",
+  "sign_up": "Sign Up",
+  "register": "Register",
+  "login": "Login",
+  "username": "User or Email",
+  "password": "Password",
+  "remember_me": "Remember Me",
+  "forgot_my_password": "Forgot my password",
+  "login_msg": "If you have not registered yet with Tostada Regia please click on Sing Up and fill in the forms to complete your order. If you are already registered please enter your account email and password and click on Login to complete your order",
+  "select_the_restaurant": "Select the Restaurant",
+  "menu": "Menu",
+  "meals": "Meals",
+  "instruction_msg": "Let us know if there is any special instruction for your order"
+
+}
