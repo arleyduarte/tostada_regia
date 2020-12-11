@@ -35,12 +35,7 @@ class RestaurantsBloc extends Bloc<RestaurantsEvent, RestaurantsState> {
         SessionManager.instance.restaurants =
             list.map((model) => Restaurant.fromJson(model)).toList();
 
-        for (Restaurant restaurant in SessionManager.instance.restaurants) {
-          SessionManager.instance.currentRestaurant = restaurant;
-          if (restaurant.isOpen) {
-            break;
-          }
-        }
+        SessionManager.instance.currentRestaurant = _getDefaultRestaurant(list);
 
         logger.d(
             "currentRestaurant != null ${SessionManager.instance.currentRestaurant.toJson()}");
@@ -51,6 +46,14 @@ class RestaurantsBloc extends Bloc<RestaurantsEvent, RestaurantsState> {
       yield RestaurantsLoadSuccess();
     }
 
+  }
+
+  _getDefaultRestaurant(List<Restaurant> restaurants){
+    for (var restaurant in restaurants) {
+      if (restaurant.isOpen) {
+        return restaurant;
+      }
+    }
   }
 
   _setupLocationData() async {
